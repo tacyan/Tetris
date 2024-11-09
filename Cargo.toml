@@ -1,0 +1,23 @@
+[package]
+name = "tetorisu"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+eframe = { version = "0.24.1", features = ["default_fonts", "glow"] }
+egui = "0.24.1"
+rand = "0.8.5"
+getrandom = { version = "0.2", features = ["js"] }
+
+[target.'cfg(windows)'.dependencies.winapi]
+version = "0.3.9"
+features = [
+    "winuser",
+    "windef",
+    "wingdi",
+    "winbase",
+    "libloaderapi",
+]
+
+[features]
+default = ["eframe/default_fonts"]
